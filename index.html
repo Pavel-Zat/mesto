@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Место</title>
+  <link rel="stylesheet" href="./pages/index.css" />
+  <link rel="shortcut icon" href="./images/favicon.ico" />
+</head>
+
+<body class="page">
+
+  <div class="page__container">
+
+    <header class="header section page__header">
+      <img class="header__logo" src="./images/mesto_logo.svg" alt="логотип место Россия">
+    </header>
+
+    <main class="content page__content">
+
+      <section class="profile section content__section ">
+        <img class="profile__avatar" src="./images/cousteau_image.jpg" alt="портрет Кусто">
+        <div class="profile__info">
+          <h1 class="profile__info-title">Жак-Ив&nbsp;Кусто</h1>
+          <button class="profile__edit-button">
+            <img class="profile__pencil" src="./images/pencil.svg" alt="карандаш">
+          </button>
+          <h2 class="profile__info-subtitle">Исследователь океана</h2>
+        </div>
+        <button class="profile__add-button">
+          <img class="profile_plus" src="./images/plus.svg" alt="плюс">
+        </button>
+      </section>
+
+      <section class="elements section content__section">
+        <ul class="elements__list page__list">
+          <li class="elements__list-item">
+            <img class="elements__item" src="./images/alps.jpg" alt="альпы">
+            <div class="elements__title">
+              <p class="elements__text">орпороаарпарарарпаорарпрпапаорарарпалроапрарпар</p>
+              <img class="elements__heart" src="./images/heart.svg" alt="сердечко">
+            </div>
+          </li>
+          <li class="elements__list-item">
+            <img class="elements__item" src="./images/alps.jpg" alt="альпы">
+            <div class="elements__title">
+              <p class="elements__text">Альпы</p>
+              <img class="elements__heart" src="./images/heart.svg" alt="сердечко">
+            </div>
+          </li>
+          <li class="elements__list-item">
+            <img class="elements__item" src="./images/alps.jpg" alt="альпы">
+            <div class="elements__title">
+              <p class="elements__text">Альпы</p>
+              <img class="elements__heart" src="./images/heart.svg" alt="сердечко">
+            </div>
+          </li>
+          <li class="elements__list-item">
+            <img class="elements__item" src="./images/alps.jpg" alt="альпы">
+            <div class="elements__title">
+              <p class="elements__text">Альпы</p>
+              <img class="elements__heart" src="./images/heart.svg" alt="сердечко">
+            </div>
+          </li>
+          <li class="elements__list-item">
+            <img class="elements__item" src="./images/alps.jpg" alt="альпы">
+            <div class="elements__title">
+              <p class="elements__text">Альпы</p>
+              <img class="elements__heart" src="./images/heart.svg" alt="сердечко">
+            </div>
+          </li>
+          <li class="elements__list-item">
+            <img class="elements__item" src="./images/alps.jpg" alt="альпы">
+            <div class="elements__title">
+              <p class="elements__text">Альпы</p>
+              <img class="elements__heart" src="./images/heart.svg" alt="сердечко">
+            </div>
+          </li>
+      </section>
+
+    </main>
+
+    <footer class="footer section page__footer">
+      <p class="footer__copyright">© 2021 Mesto Russia </p>
+    </footer>
+
+
+    <section class="popup">
+      <form class="popup__container">
+        <button class="popup__close"></button>
+        <div class="popup__content">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" placeholder="Жак-Ив Кусто" class="popup__text popup__text_type_name">
+          <input type="text" placeholder="Исследователь океана" class="popup__text popup__text_type_job">
+          <button type="submit" class="popup__save popup__save_action_add">Сохранить</button>
+        </form>
+      </div>
+    </section>
+
+
+
+
+    <!-- Попап -->
+    <!--<section class="popup">
+      <div class="popup__container">
+        <button class="popup__close"></button>
+        <div class="popup__content">
+          <h2 class="popup__title">О проекте</h2>
+          <p class="popup__text">Путешествия по России это студенческий проект третьего спринта программы
+            веб-разработчик. Его задача — отточить навык адаптивной вёрстки и работы с Фигмой. А этот попап — кейс для
+            отработки практики 4-го спринта.</p>
+        </div>
+      </div>
+    </section>-->
+  </div>
+  <script src="./scripts/index.js"></script>
+
+</body>
+
+
+</html>
