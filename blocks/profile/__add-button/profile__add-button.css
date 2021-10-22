@@ -4,7 +4,13 @@
     color: #ffffff;
     background-color: #000000;
     border: solid 2px #ffffff;
+    cursor: pointer;
 }
+
+.profile__add-button:hover {
+    opacity: 0.6;
+}
+
 @media all and (max-width: 1279px) {
     .profile__add-button {
         width: 282px;
