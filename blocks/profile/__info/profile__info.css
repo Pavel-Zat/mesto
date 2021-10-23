@@ -7,6 +7,7 @@
 
 @media all and (max-width: 1279px) {
     .profile__info {
+        max-width: 320px;
         padding-right: 0;
         padding-bottom: 33px;
         justify-content: center;
