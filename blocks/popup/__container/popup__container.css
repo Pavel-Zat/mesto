@@ -11,3 +11,10 @@
     display: flex;
     justify-content: center
 }
+
+@media all and (max-width: 1279px) {
+    .popup__container {
+        max-width: 282px;
+        height: 322px;
+    }
+}

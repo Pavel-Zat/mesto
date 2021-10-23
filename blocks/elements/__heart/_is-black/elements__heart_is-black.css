@@ -2,5 +2,5 @@
     background-image: url(../../../../images/black_heart.svg);
     background-origin: border-box;
     background-repeat: no-repeat;
-    align-self: center;
+    align-self: flex-end;
 }

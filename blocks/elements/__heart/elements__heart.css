@@ -1,5 +1,7 @@
 .elements__heart {
     cursor: pointer;
+    /* padding-top: 21px; */
+    align-self: flex-end;
     
 }
 .elements__heart:hover {
