@@ -14,23 +14,23 @@ const profileElement = document.querySelector('.profile')
 /**
  * Функция, которая «переключает» состояние всплывающего окошка
  */
-const togglePopupVisibility = function() {
+const togglePopupVisibility = function () {
   popupElement.classList.toggle('popup_is-opened')
 }
 
-const openPopup = function() {
+const openPopup = function () {
   popupElement.classList.add('popup_is-opened')
   console.log('Open popup clicked')
 }
 
-const closePopup = function() {
+const closePopup = function () {
   popupElement.classList.remove('popup_is-opened')
 }
 
 /**
  * Функция, которая закрывает окошко по клику на затемненную область.
  */
-const closePopupByClickOnOverlay = function(event) {
+const closePopupByClickOnOverlay = function (event) {
   console.log(event.target, event.currentTarget)
   if (event.target !== event.currentTarget) {
     return
@@ -45,13 +45,13 @@ popupCloseButtonElement.addEventListener('click', closePopup)
 popupElement.addEventListener('click', closePopupByClickOnOverlay)
 
 ///headerElement.addEventListener('click', function() {
-profileElement.addEventListener('click', function() {  
+profileElement.addEventListener('click', function () {
 
   console.log('Profile clicked')
 })
 
 // Как работают функции обратного вызова (на упрощенном примере)
-const addEventListener = function(type, callback) {
+const addEventListener = function (type, callback) {
   console.log(type)
   const event = {
     target: '',
@@ -88,21 +88,44 @@ function formSubmitHandler(evt) {
   // Получите значение полей jobInput и nameInput из свойства value
   formElement.querySelector(".popup__text_type_name").value;
   formElement.querySelector(".popup__text_type_job").value;
- nameInput.value = formElement.querySelector(".popup__text_type_name").value;
- jobInput.value = formElement.querySelector(".popup__text_type_job").value;
+  nameInput.value = formElement.querySelector(".popup__text_type_name").value;
+  jobInput.value = formElement.querySelector(".popup__text_type_job").value;
   //renderAdded();
   //console.log(nameInput.value);
   //console.log(jobInput.value);
   // Выберите элементы, куда должны быть вставлены значения полей
-let name = document.querySelector('.profile__info-title');
-let job = document.querySelector('.profile__info-subtitle');
+  let name = document.querySelector('.profile__info-title');
+  let job = document.querySelector('.profile__info-subtitle');
   // Вставьте новые значения с помощью textContent
-name.textContent = nameInput.value;  
-job.textContent = jobInput.value; 
+  name.textContent = nameInput.value;
+  job.textContent = jobInput.value;
   console.log(nameInput.value);
-closePopup()
+  closePopup()
 }
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler);
+
+const heartBlack = document.querySelector('.elements__heart_is-black');
+const heartBlacks = document.querySelectorAll('.elements__heart_is-black');
+console.log(heartBlacks);
+
+const heart = document.querySelector('.elements__heart');
+const hearts = document.querySelectorAll('.elements__heart');
+console.log(hearts);
+// Array.from(document.querySelectorAll('.elements__heart'));
+// console.log(Array.from(document.querySelectorAll('.elements__heart')));
+
+// const changeHeart = function () {
+  // heart.classList.toggle('elements__heart_is-black');
+// }
+
+// heart.addEventListener('click', changeHeart);
+
+Array.from(document.querySelectorAll('.elements__heart') ).forEach( element => {
+	element.addEventListener( 'click', function(){
+	const changeHeart = this.classList.toggle('elements__heart_is-black');
+	// this.src = changeHeart ? './images/black_heart.svg' : './images/heart.svg';
+	});
+});
