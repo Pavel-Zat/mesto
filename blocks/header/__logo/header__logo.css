@@ -1,27 +1,14 @@
 .header__logo {}
 
-
-/*@media all and (max-width: 1279px) {
-    .header {
-      padding-bottom: ;
-    }
+@media all and (max-width: 950px) {
+  .header__logo {
+    padding-left: 15px;
   }
-  
-  @media all and (max-width: 1023px) {
-    .header {
-      padding-bottom: ;
-    }
-  }
-  
-  @media all and (max-width: 767px) {
-    .header {
-      padding-bottom: ;
-    }
-  }*/
+}
 
 @media all and (max-width: 767px) {
-    .header__logo {
-        padding: 27px 0 0 28px;
-        max-width: 104px;
-    }
+  .header__logo {
+    padding: 27px 0 0 28px;
+    max-width: 104px;
+  }
 }

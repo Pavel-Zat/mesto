@@ -6,8 +6,8 @@
 
 @media all and (max-width: 950px) {
     .header {
-        margin-left: 15px;
-        margin-right: 15px;
+        /* margin-left: 15px; */
+        /* margin-right: 15px; */
     }
 }
 
