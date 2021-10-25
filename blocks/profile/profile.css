@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 42px;
 }
 
 @media all and (max-width: 950px) {
@@ -18,5 +18,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 52px;
     }
 }

@@ -45,10 +45,9 @@ const addEventListener = function (type, callback) {
 }
 console.log("Привет, Мир!");
 
-let formElement = document.querySelector(".popup__content");
-
-let nameInput = formElement.querySelector(".popup__text_type_name");
-let jobInput = formElement.querySelector(".popup__text_type_job");
+const formElement = document.querySelector(".popup__content");
+const nameInput = formElement.querySelector(".popup__text_type_name");
+const jobInput = formElement.querySelector(".popup__text_type_job");
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
@@ -58,8 +57,8 @@ function formSubmitHandler(evt) {
   nameInput.value = formElement.querySelector(".popup__text_type_name").value;
   jobInput.value = formElement.querySelector(".popup__text_type_job").value;
 
-  let name = document.querySelector('.profile__info-title');
-  let job = document.querySelector('.profile__info-subtitle');
+  const name = document.querySelector('.profile__info-title');
+  const job = document.querySelector('.profile__info-subtitle');
 
   name.textContent = nameInput.value;
   job.textContent = jobInput.value;
@@ -69,17 +68,17 @@ function formSubmitHandler(evt) {
 formElement.addEventListener('submit', formSubmitHandler);
 
 
-const heartBlack = document.querySelector('.elements__heart_is-black');
-const heartBlacks = document.querySelectorAll('.elements__heart_is-black');
-console.log(heartBlacks);
+// const heartBlack = document.querySelector('.elements__heart_is-black');
+// const heartBlacks = document.querySelectorAll('.elements__heart_is-black');
+// console.log(heartBlacks);
 
-const heart = document.querySelector('.elements__heart');
-const hearts = document.querySelectorAll('.elements__heart');
-console.log(hearts);
+// const heart = document.querySelector('.elements__heart');
+// const hearts = document.querySelectorAll('.elements__heart');
+// console.log(hearts);
 
 
-Array.from(document.querySelectorAll('.elements__heart')).forEach(element => {
-  element.addEventListener('click', function () {
-    const changeHeart = this.classList.toggle('elements__heart_is-black');
-  });
-});
+// Array.from(document.querySelectorAll('.elements__heart')).forEach(element => {
+  // element.addEventListener('click', function () {
+    // const changeHeart = this.classList.toggle('elements__heart_is-black');
+  // });
+// });

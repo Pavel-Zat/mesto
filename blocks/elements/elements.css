@@ -1,4 +1,10 @@
 .elements {
     font-family: 'Inter', Arial, sans-serif;
-    margin-top: 35px;
+    margin-top: 50px;
+}
+
+@media all and (max-width: 767px) {
+    .elements {
+        margin-top: 32px;
+    }
 }

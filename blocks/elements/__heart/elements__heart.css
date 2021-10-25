@@ -1,9 +1,15 @@
 .elements__heart {
     cursor: pointer;
-    /* padding-top: 21px; */
     align-self: flex-end;
-    
+    background-image: url(../../../images/heart.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #FFFFFF;
+    width: 24px;
+    height: 19px;
+    border: none;
 }
+
 .elements__heart:hover {
     opacity: 0.6;
 }
