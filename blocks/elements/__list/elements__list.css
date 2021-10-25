@@ -1,6 +1,19 @@
 .elements__list {
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
     gap: 17px;
+}
+
+@media all and (max-width: 950px) {
+    .elements__list {
+        margin: auto;
+        max-width: 590px;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .elements__list {
+        
+    }
 }

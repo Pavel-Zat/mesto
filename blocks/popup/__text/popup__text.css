@@ -10,7 +10,7 @@
     margin: 0;
     padding-top: 30px;
 }
-@media all and (max-width: 1279px) {
+@media all and (max-width: 767px) {
     .popup__text {
         max-width: 282px;
         align-self: center;

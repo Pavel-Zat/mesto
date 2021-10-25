@@ -3,3 +3,16 @@
     border-bottom: 1px solid #545454;
     min-height: 74px;
 }
+@media all and (max-width: 950px) {
+    .header {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .header {
+        dmargin-left: 0px;
+        margin-right: 0px;
+    }
+}
