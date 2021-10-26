@@ -9,14 +9,12 @@
     margin: 45px auto;
     padding: 0;
 }
+
 @media all and (max-width: 767px) {
     .page__container {
         max-width: 320px;
-        width: 100%;
-        min-height: 100vh;
         display: flex;
         flex-direction: column;
         margin: auto;
-        padding: 0;
     }
-  }
+}

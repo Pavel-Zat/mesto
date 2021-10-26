@@ -3,13 +3,12 @@
     background-color: #FFFFFF;
     max-width: 100%;
     width: 100%;
-    /* height: 100%; */
-    /* width: 282px; */
-    height: 361px;
     border-radius: 10px;
     overflow: hidden;
+    padding-bottom: 26px;
     margin: 0;
 }
+
 @media all and (max-width: 1279px) {
     .elements__list-item {
         max-width: 282px;

@@ -5,6 +5,6 @@
 
 @media all and (max-width: 767px) {
     .footer {
-        margin-top: 51px;
+        margin: 48px 0 36px 0;
     }
 }

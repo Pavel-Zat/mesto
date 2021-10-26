@@ -17,5 +17,6 @@
 @media all and (max-width: 767px) {
     .profile__add-button {
         width: 282px;
+        background-image: url(../../../images/plus_mobile.svg);
     }
 }
