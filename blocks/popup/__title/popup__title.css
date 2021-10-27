@@ -6,8 +6,7 @@
     line-height: 29px;
     color: #000000;
     margin: 0;
-    padding-top: 34px;
-    padding-bottom: 24px;
+    padding: 34px 0px 24px 36px;
 }
 
 @media all and (max-width: 767px) {
@@ -17,5 +16,6 @@
         max-width: 238px;
         padding-top: 26px;
         padding-bottom: 36px;
+        padding-left: 0px;
     }
 }

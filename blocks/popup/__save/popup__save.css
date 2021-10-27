@@ -12,10 +12,11 @@
     margin-top: 48px;
     align-self: center;
     border: none;
+    border-radius: 2px;
 }
 
 .popup__save:hover {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 @media all and (max-width: 767px) {

@@ -25,7 +25,7 @@
         <div class="profile__info">
           <h1 class="profile__info-title">Жак-Ив&nbsp;Кусто</h1>
           <button class="profile__edit-button" type="button"></button>
-          <h2 class="profile__info-subtitle">Исследователь океана</h2>
+          <p class="profile__info-subtitle">Исследователь океана</p>
         </div>
         <button class="profile__add-button" type="button"></button>
       </section>
@@ -35,42 +35,42 @@
           <li class="elements__list-item">
             <img class="elements__item" src="./images/karachaevsk.jpg" alt="карачаевск">
             <div class="elements__title">
-              <p class="elements__text">Карачаевск</p>
+              <h2 class="elements__text">Карачаевск</h2>
               <button type="button" class="elements__heart"></button>
             </div>
           </li>
           <li class="elements__list-item">
             <img class="elements__item" src="./images/alps.jpg" alt="альпы">
             <div class="elements__title">
-              <p class="elements__text">Альпы</p>
+              <h2 class="elements__text">Альпы</h2>
               <button type="button" class="elements__heart"></button>
             </div>
           </li>
           <li class="elements__list-item">
             <img class="elements__item" src="./images/ugra.jpg" alt="угра">
             <div class="elements__title">
-              <p class="elements__text">Угра</p>
+              <h2 class="elements__text">Угра</h2>
               <button type="button" class="elements__heart"></button>
             </div>
           </li>
           <li class="elements__list-item">
             <img class="elements__item" src="./images/kamchatka.jpg" alt="камчатка">
             <div class="elements__title">
-              <p class="elements__text">Камчатка</p>
+              <h2 class="elements__text">Камчатка</h2>
               <button type="button" class="elements__heart"></button>
             </div>
           </li>
           <li class="elements__list-item">
             <img class="elements__item" src="./images/elbrus.jpg" alt="эльбрус">
             <div class="elements__title">
-              <p class="elements__text">Эльбрус</p>
+              <h2 class="elements__text">Эльбрус</h2>
               <button type="button" class="elements__heart"></button>
             </div>
           </li>
           <li class="elements__list-item">
             <img class="elements__item" src="./images/dombai.jpg" alt="домбай">
             <div class="elements__title">
-              <p class="elements__text">Домбай</p>
+              <h2 class="elements__text">Домбай</h2>
               <button type="button" class="elements__heart"></button>
             </div>
           </li>
@@ -80,21 +80,21 @@
     </main>
 
     <footer class="footer section page__footer">
-      <p class="footer__copyright">© 2021 Mesto Russia </p>
+      <p class="footer__copyright">&copy; 2021 Mesto Russia </p>
     </footer>
 
 
-    <section class="popup">
+    <div class="popup">
       <div class="popup__container">
         <button class="popup__close"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
         <form name="popup-form" class="popup__content">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <input name="text" type="text" value="Жак-Ив&nbsp;Кусто" class="popup__text popup__text_type_name">
-          <input name="text" type="text" value="Исследователь океана" class="popup__text popup__text_type_job">
+          <input name="name" type="text" class="popup__text popup__text_type_name">
+          <input name="job" type="text" class="popup__text popup__text_type_job">
           <button type="submit" class="popup__save popup__save_action_add">Сохранить</button>
         </form>
       </div>
-    </section>
+    </div>
 
   </div>
   <script src="./scripts/index.js"></script>

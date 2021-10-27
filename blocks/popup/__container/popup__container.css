@@ -5,11 +5,11 @@
     background: #FFFFFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-  
     position: relative;
-    
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 175px;
 }
 
 @media all and (max-width: 767px) {
@@ -17,6 +17,7 @@
         max-width: 282px;
         min-height: 322px;
         margin-top: 0;
-        margin-bottom: 281px;
+        margin-bottom: 268px;
+        align-items: center;
     }
 }
