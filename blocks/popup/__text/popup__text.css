@@ -8,7 +8,7 @@
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     margin: 0;
-    padding-top: 30px;
+    padding: 27px 0px 9px 0px;
 }
 @media all and (max-width: 767px) {
     .popup__text {

@@ -14,7 +14,8 @@
     .profile__info {
         max-width: 320px;
         padding-right: 0;
-        padding-bottom: 33px;
+        padding-left: 0;
+        padding-bottom: 29px;
         justify-content: center;
     }
 }

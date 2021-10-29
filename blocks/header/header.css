@@ -13,6 +13,7 @@
 
 @media all and (max-width: 767px) {
     .header {
+        min-height: 84px;
         margin-left: 0px;
         margin-right: 0px;
     }

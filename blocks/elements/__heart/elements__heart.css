@@ -8,6 +8,7 @@
     width: 24px;
     height: 19px;
     border: none;
+    margin: 0px 4px 4px 0px;
 }
 
 .elements__heart:hover {
