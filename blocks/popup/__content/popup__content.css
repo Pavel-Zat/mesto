@@ -8,6 +8,7 @@
 @media all and (max-width: 767px) {
     .popup__content {
         max-width: 238px;
-        padding-left: 0px;
+        padding: 0px;
+        margin: auto;
     }
 }
