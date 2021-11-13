@@ -37,4 +37,11 @@
 @import url(../blocks/popup/__content/popup__content.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close/popup__close.css);
-
+@import url(../blocks/popupadd/popupadd.css);
+@import url(../blocks/popupadd/__close/popupadd__close.css);
+@import url(../blocks/popupadd/__container/popupadd__container.css);
+@import url(../blocks/popupadd/__content/popupadd__content.css);
+@import url(../blocks/popupadd/__save/popupadd__save.css);
+@import url(../blocks/popupadd/__text/popupadd__text.css);
+@import url(../blocks/popupadd/__title/popupadd__title.css);
+@import url(../blocks/popupadd/_is-opened/popupadd_is-opened.css);

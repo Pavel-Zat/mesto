@@ -1,0 +1,20 @@
+.popupadd__title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin: 0;
+    padding: 34px 0px 24px 36px;
+}
+
+@media all and (max-width: 767px) {
+    .popupadd__title {
+        font-size: 18px;
+        line-height: 22px;
+        max-width: 238px;
+        padding: 25px 0px 45px 0px;
+        margin: auto;
+    }
+}

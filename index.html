@@ -31,8 +31,8 @@
       </section>
 
       <section class="elements section content__section">
-        <!-- <ul class="elements__list page__list">
-          <li class="elements__list-item">
+        <ul class="elements__list page__list">
+          <!-- <li class="elements__list-item">
             <img class="elements__item" src="./images/karachaevsk.jpg" alt="карачаевск">
             <div class="elements__title">
               <h2 class="elements__text">Карачаевск</h2>
@@ -73,8 +73,8 @@
               <h2 class="elements__text">Домбай</h2>
               <button type="button" class="elements__heart"></button>
             </div>
-          </li>
-        </ul> -->
+          </li> -->
+        </ul>
       </section>
 
     </main>
@@ -96,26 +96,38 @@
       </div>
     </div>
 
-    <div class="popup popup_type_image">
-      <figure class="popup__figure">
-        <img src="" alt=""
-          class="popup__image">
-        <figcaption class="popup__caption"></figcaption>
-        <button class="popup__close" type="button"></button>
-      </figure>
+    <div class="popupadd">
+      <div class="popupadd__container">
+        <button class="popupadd__close"></button>
+        <h2 class="popupadd__title">Новое место</h2>
+        <form name="popupadd-form" class="popupadd__content">
+          <input placeholder="Название" name="place" type="text" class="popupadd__text popupadd__text_type_place">
+          <input placeholder="Ссылка на картинку" name="link" type="text" class="popupadd__text popupadd__text_type_link">
+          <button type="submit" class="popupadd__save popupadd__save_action_add">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popupimg">
+      <div class="popupimg__container">
+        <button class="popupimg__close"></button>
+        <figure class="popupimg__figure">
+          <img class="popupimg__image" src ="#">
+          <figcaption class="popupimg__capture"></figcaption>
+        </figure>
+      </div>
     </div>
 
   </div>
 
-  <template id="card-template">
-    <div class="elements__list-item">
-      <img class="elements__item" src="" alt="">
+  <template class="cards_template">
+    <li class="elements__list-item">
+      <img class="elements__item">
       <div class="elements__title">
-        <h2 class="elements__text"></h2>
-        <button type="button" class="elements__heart" aria-label="like"></button>
+        <h2 class="elements__text">`${text}`</h2>
+        <button type="button" class="elements__heart"></button>
       </div>
-      <img  class="elements__trash" src="./images/trash.svg" alt="корзина">
-    </div>
+    </li>
   </template>
 
 

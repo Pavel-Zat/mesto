@@ -1,0 +1,31 @@
+.popupadd__save {
+    width: 358px;
+    height: 50px;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+    margin-top: 52px;
+    align-self: center;
+    border: none;
+    border-radius: 2px;
+}
+
+.popupadd__save:hover {
+    opacity: 0.8;
+}
+
+@media all and (max-width: 767px) {
+    .popupadd__save {
+        max-width: 238px;
+        height: 46px;
+        font-size: 14px;
+        line-height: 17px;
+        padding: 0px;
+        margin-top: 47px;
+    }
+}

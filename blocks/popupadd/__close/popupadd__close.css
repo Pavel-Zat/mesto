@@ -1,0 +1,30 @@
+.popupadd__close {
+  width: 32px;
+  height: 32px;
+  background: transparent center url("../../../images/close_icon.svg");
+  background-size: auto;
+  border: none;
+  /*-webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;*/
+  position: absolute;
+  top: -40px;
+  right: -40px;
+}
+
+.popupadd__close:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media all and (max-width: 767px) {
+  .popupadd__close {
+    width: 20px;
+    height: 20px;
+    background: transparent center url("../../../images/close_icon_mobile.svg");
+    top: -36px;
+    right: 0;
+  }
+}

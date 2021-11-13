@@ -1,0 +1,14 @@
+.popupadd__content {
+    max-width: 358px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 37px 36px;
+}
+
+@media all and (max-width: 767px) {
+    .popupadd__content {
+        max-width: 238px;
+        padding: 0px;
+        margin: auto;
+    }
+}
