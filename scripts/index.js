@@ -16,7 +16,7 @@ const addFormElement = document.querySelector('.popupadd__content');
 
 
 
-
+//функции открытия, закрытия и заполнения формы popup
 const openPopup = function () {
   popupElement.classList.add('popup_is-opened');
   nameInput.value = nameProfile.textContent;
@@ -30,12 +30,12 @@ const closePopup = function () {
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
-
   nameProfile.textContent = nameInput.value;
   jobProfile.textContent = jobInput.value;
-
   closePopup()
 }
+
+
 //функции открытия и закрытия popupadd
 const openPopupAdd = function () {
   popupAddElement.classList.add('popupadd_is-opened');
@@ -45,6 +45,7 @@ const closePopupAdd = function () {
 }
 
 
+//слушатели событий popup
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
 formElement.addEventListener('submit', formSubmitHandler);
@@ -54,8 +55,12 @@ popupAddCloseButtonElement.addEventListener('click', closePopupAdd);
 //addFormElement.addEventListener('submit', formSubmitHandler);
 
 
-const elementBlock = document.querySelector('.elements');
-const cardTemplate = document.querySelector('#card-template');
+
+//переменные для 
+const cardsElements = document.querySelector('.elements');
+const cardTemplate = document.querySelector('.card-template');
+const inputName = document.querySelector('.elements__text');
+const inputLink = document.querySelector('.elements__item');
 const initialCards = [
   {
     name: 'Архыз',
@@ -82,6 +87,55 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
+//Функция, которая принимает в качестве аргумента данные карточки...
+function renderNewCard(element) {
+  const cardElement = cardTemplate.content.cloneNode(true); // клонирует template
+  // устанавливаем картинку и название в template...alt не забываем )
+  const cardElementImg = cardTemplate.querySelector('.elements__item');
+  cardElementImg.src = element.link;
+  cardTemplate.querySelector('.elements__text').textContent = element.name;
+  cardElementImg.alt = element.name;
+  // 3 обработчика событий - лайк, удаление и открытие больной картинки
+
+  //возвращаем готовую разметку (вкл. все данные и обработчики)
+  return cardElement
+  
+}
+
+function renderNewCards() {
+  initialCards.forEach((element) => {
+    renderCard(element);
+  });
+}
+
+//Функция приинимает данные карточки и ссылку на контейнер, куда положить руз-т
+//внутри себя создает разметку карточки, исп-уя ф-ию выше. и кладет в разметку
+//
+/// ф-ция добавления пользовательской карточки
+function addNewCard() {
+  const newCard = {
+      name: inputName.value,
+      link: inputLink.value,
+  }
+  renderCard(newCard);
+}
+
+///колбек самбита добавления карточек
+function addCards(event){
+  event.preventDefault();
+  addNewCard();
+  removePopupAddVisibility();
+}
+
+
+function renderCard(element) {
+  const  cardNewElement = renderNewCard(element);
+  cardsElements.prepend(cardNewElement);
+}
+
+
+//Нерабочий код, просто тренировка
 // initialCards.forEach((element) => {
 //     renderCard(createCard(element.link, element.name));
 // })
