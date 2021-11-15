@@ -58,7 +58,7 @@ popupAddCloseButtonElement.addEventListener('click', closePopupAdd);
 
 //переменные для 
 const cardsElements = document.querySelector('.elements');
-const cardTemplate = document.querySelector('.card-template');
+const cardTemplate = document.querySelector('.cards_template');
 const inputName = document.querySelector('.elements__text');
 const inputLink = document.querySelector('.elements__item');
 const initialCards = [
@@ -92,9 +92,9 @@ const initialCards = [
 function renderNewCard(element) {
   const cardElement = cardTemplate.content.cloneNode(true); // клонирует template
   // устанавливаем картинку и название в template...alt не забываем )
-  const cardElementImg = cardTemplate.querySelector('.elements__item');
+  const cardElementImg = cardElement.querySelector('.elements__item');
   cardElementImg.src = element.link;
-  cardTemplate.querySelector('.elements__text').textContent = element.name;
+  cardElement.querySelector('.elements__text').textContent = element.name;
   cardElementImg.alt = element.name;
   // 3 обработчика событий - лайк, удаление и открытие больной картинки
 
@@ -134,7 +134,7 @@ function renderCard(element) {
   cardsElements.prepend(cardNewElement);
 }
 
-
+renderNewCards();
 //Нерабочий код, просто тренировка
 // initialCards.forEach((element) => {
 //     renderCard(createCard(element.link, element.name));
