@@ -106,7 +106,7 @@ function addNewCard() {
 function addCards(event){
   event.preventDefault();
   addNewCard();
-  removePopupAddVisibility();
+  removePopupAddVisibility(popupAddElement);
 }
 
 
@@ -130,10 +130,10 @@ function deleteCard(event) {
 }
 
 function renderOpenPopupImg (event){
-  popupImg.src = event.target.src;
-  popupImg.alt = event.target.alt;
+  popupImage.src = event.target.src;
+  popupImage.alt = event.target.alt;
   popupImgText.textContent = event.target.alt;
-  openPopup(popupElementImg);
+  openPopup(popupAddElement);
 }
 
 //слушатели событий popup
