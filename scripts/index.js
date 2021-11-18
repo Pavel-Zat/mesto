@@ -25,7 +25,7 @@ const cardTemplate = document.querySelector('.cards_template');
 // переменные для popupimg
 const popupImgElement = document.querySelector('.popupimg');
 const popupImage = document.querySelector('.popupimg__image');
-const popupImgCloseButtonElement = popupAddElement.querySelector('.popupimg__close');
+const popupImgCloseButtonElement = popupImgElement.querySelector('.popupimg__close');
 const popupImgOpenButtonElement = document.querySelector('.elements__item');
 const popupImgText = document.querySelector('.popupimg__capture');
 
@@ -106,7 +106,7 @@ function addNewCard() {
 function addCards(event){
   event.preventDefault();
   addNewCard();
-  removePopupAddVisibility(popupImgElement);
+  removePopupAddVisibility(popupAddElement);
 }
 
 
@@ -129,13 +129,23 @@ function deleteCard(event) {
   event.target.closest('.elements__list-item').remove();
 }
 
+function openPopupImg() {
+  popupImgElement.classList.add('popupimg_is-opened');
+}
+function closePopupImg() {
+  popupImgElement.classList.remove('popupimg_is-opened');
+}
+
+
 function renderOpenPopupImg (event){
   popupImage.src = event.target.src;
   popupImage.alt = event.target.alt;
   popupImgText.textContent = event.target.alt;
-  openPopup(popupImgElement);
+  openPopupImg(popupImgElement);
 }
 
+
+renderNewCards();
 //слушатели событий popup
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
@@ -143,7 +153,8 @@ formElement.addEventListener('submit', formSubmitHandler);
 //слушатели событий popupadd
 popupAddOpenButtonElement.addEventListener('click', openPopupAdd);
 popupAddCloseButtonElement.addEventListener('click', closePopupAdd);
-popupImgElement.addEventListener('submit', addCards);
+addFormElement.addEventListener('submit', addCards);
+//слушатели событий popupimg
 
-
-renderNewCards();
+popupImgCloseButtonElement.addEventListener('click', closePopupImg);
+//   closePopupImg.addEventListener('click', removePopupClick);

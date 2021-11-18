@@ -10,8 +10,8 @@
       -o-transition: 0.3s;
       transition: 0.3s;*/
     position: absolute;
-    top: -40px;
-    right: -40px;
+    top: 0px;
+    right: 0px;
   }
   
   .popupimg__close:hover {
