@@ -106,7 +106,7 @@ function addNewCard() {
 function addCards(event){
   event.preventDefault();
   addNewCard();
-  removePopupAddVisibility(popupAddElement);
+  closePopupAdd(popupAddElement);
 }
 
 
