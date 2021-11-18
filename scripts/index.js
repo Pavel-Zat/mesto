@@ -15,12 +15,12 @@ const popupAddCloseButtonElement = popupAddElement.querySelector('.popupadd__clo
 const popupAddOpenButtonElement = document.querySelector('.profile__add-button');
 const addFormElement = document.querySelector('.popupadd__content');
 const popupAddSaveButtonElement = document.querySelector('.popupadd__save');
+const inputName = document.querySelector('.popupadd__text_type_place');
+const inputLink = document.querySelector('.popupadd__text_type_link');
 
 //переменные для установки картинок и клонирования...
 const cardsElements = document.querySelector('.elements__list');
 const cardTemplate = document.querySelector('.cards_template');
-const inputName = document.querySelector('.elements__text');
-const inputLink = document.querySelector('.elements__item');
 
 // переменные для popupimg
 const popupImgElement = document.querySelector('.popupimg');
@@ -106,7 +106,7 @@ function addNewCard() {
 function addCards(event){
   event.preventDefault();
   addNewCard();
-  removePopupAddVisibility(popupAddElement);
+  removePopupAddVisibility(popupImgElement);
 }
 
 
@@ -133,7 +133,7 @@ function renderOpenPopupImg (event){
   popupImage.src = event.target.src;
   popupImage.alt = event.target.alt;
   popupImgText.textContent = event.target.alt;
-  openPopup(popupAddElement);
+  openPopup(popupImgElement);
 }
 
 //слушатели событий popup
@@ -143,7 +143,7 @@ formElement.addEventListener('submit', formSubmitHandler);
 //слушатели событий popupadd
 popupAddOpenButtonElement.addEventListener('click', openPopupAdd);
 popupAddCloseButtonElement.addEventListener('click', closePopupAdd);
-//addFormElement.addEventListener('submit', formSubmitHandler);
+popupImgElement.addEventListener('submit', addCards);
 
 
 renderNewCards();

@@ -46,3 +46,11 @@
 @import url(../blocks/popupadd/__text/popupadd__text.css);
 @import url(../blocks/popupadd/__title/popupadd__title.css);
 @import url(../blocks/popupadd/_is-opened/popupadd_is-opened.css);
+@import url(../blocks/popupimg/popupimg.css);
+@import url(../blocks/popupimg/_is-opened/popupimg_is-opened.css);
+@import url(../blocks/popupimg/__image/popupimg__image.css);
+@import url(../blocks/popupimg/__fugure/popupimg__figure.css);
+@import url(../blocks/popupimg/__container/popupimg__container.css);
+@import url(../blocks/popupimg/__close/popupimg__close.css);
+@import url(../blocks/popupimg/__capture/popupimg__capture.css);
+
