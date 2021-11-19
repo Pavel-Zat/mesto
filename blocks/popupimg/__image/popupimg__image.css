@@ -1,4 +1,5 @@
 .popupimg__image {
   object-fit: contain;
-  max-width: 433px;
+  max-width: 75vw;
+  max-height: 75vh;
 }
