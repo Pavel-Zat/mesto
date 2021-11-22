@@ -1,3 +1,7 @@
 .popupadd_is-opened {
-    display: flex;
+  visibility: visible;
+  height: 100vh;
+  opacity: 1;
+  transition: visibility 0s linear 0s, overflow 0s linear 0.4s,
+    opacity 0.4s linear 0s;
 }

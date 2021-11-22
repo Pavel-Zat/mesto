@@ -49,16 +49,6 @@ function formSubmitHandler(evt) {
   jobProfile.textContent = jobInput.value;
   closePopup()
 }
-// моя верхняя выполняет это const savePopup = function(event){
-//  event.preventDefault();
-//  profileElementFirstname.textContent = popupIdName.value;
-//  profileElementText.textContent = popupIdText.value;
-//  closesPopup(popupElementProfile);
-//};
-//????function removePopupClick(evt) {
-//  const openidPopup = evt.target.closest('.popup_is-opened');
-//  closesPopup(openidPopup);
-//};
 
 //функции открытия и закрытия popupadd
 const openPopupAdd = function () {
@@ -67,7 +57,6 @@ const openPopupAdd = function () {
 const closePopupAdd = function () {
   popupAddElement.classList.remove('popupadd_is-opened');
 }
-
 
 //Функция, которая принимает в качестве аргумента данные карточки...
 function renderNewCard(element) {
@@ -81,7 +70,6 @@ function renderNewCard(element) {
   setCardListeners(cardElement);
   //возвращаем готовую разметку (вкл. все данные и обработчики)
   return cardElement
-  
 }
 
 function renderNewCards() {
@@ -92,26 +80,23 @@ function renderNewCards() {
 
 //Функция приинимает данные карточки и ссылку на контейнер, куда положить руз-т
 //внутри себя создает разметку карточки, исп-уя ф-ию выше. и кладет в разметку
-//
-/// ф-ция добавления пользовательской карточки
+
 function addNewCard() {
   const newCard = {
-      name: inputName.value,
-      link: inputLink.value,
+    name: inputName.value,
+    link: inputLink.value,
   }
   renderCard(newCard);
 }
 
-///колбек самбита добавления карточек
-function addCards(event){
+function addCards(event) {
   event.preventDefault();
   addNewCard();
   closePopupAdd(popupAddElement);
 }
 
-
 function renderCard(element) {
-  const  cardNewElement = renderNewCard(element);
+  const cardNewElement = renderNewCard(element);
   cardsElements.prepend(cardNewElement);
 }
 
@@ -136,8 +121,7 @@ function closePopupImg() {
   popupImgElement.classList.remove('popupimg_is-opened');
 }
 
-
-function renderOpenPopupImg (event){
+function renderOpenPopupImg(event) {
   popupImage.src = event.target.src;
   popupImage.alt = event.target.alt;
   popupImgText.textContent = event.target.alt;
@@ -155,6 +139,5 @@ popupAddOpenButtonElement.addEventListener('click', openPopupAdd);
 popupAddCloseButtonElement.addEventListener('click', closePopupAdd);
 addFormElement.addEventListener('submit', addCards);
 //слушатели событий popupimg
-
 popupImgCloseButtonElement.addEventListener('click', closePopupImg);
-//   closePopupImg.addEventListener('click', removePopupClick);
+
