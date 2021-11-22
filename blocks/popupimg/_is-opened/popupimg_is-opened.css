@@ -1,6 +1,11 @@
 .popupimg_is-opened {
+<<<<<<< HEAD
     visibility: visible;
     height: 100vh;
     opacity: 1;
     transition:visibility 0s linear 0s, overflow 0s linear 0.5s, opacity 0.5s linear 0s;
 }
+=======
+  display: flex;
+}
+>>>>>>> 160c03ce9f6e9ce864568b9cf4cfcdf16b20ad2e
