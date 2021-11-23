@@ -135,7 +135,11 @@ popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
 formElement.addEventListener('submit', formSubmitHandler);
 //слушатели событий popupadd
-popupAddOpenButtonElement.addEventListener('click', openPopupAdd);
+popupAddOpenButtonElement.addEventListener('click', () => {
+  inputName.value = '';
+  inputLink.value = '';
+  openPopupAdd();
+  });
 popupAddCloseButtonElement.addEventListener('click', closePopupAdd);
 addFormElement.addEventListener('submit', addCards);
 //слушатели событий popupimg
