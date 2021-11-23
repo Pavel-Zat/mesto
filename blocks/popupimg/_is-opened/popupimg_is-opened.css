@@ -1,7 +1,6 @@
 .popupimg_is-opened {
-  visibility: visible;
-  height: 100vh;
-  opacity: 1;
-  transition: visibility 0s linear 0s, overflow 0s linear 0.4s,
-    opacity 0.4s linear 0s;
+    visibility: visible;
+    height: 100vh;
+    opacity: 1;
+    transition: visibility 0s linear 0s, overflow 0s linear 0.5s, opacity 0.5s linear 0s;
 }
