@@ -1,4 +1,4 @@
-.popupadd {
+/* .popupadd {
   font-family: "Inter", Arial, sans-serif;
   position: fixed;
   top: 0;
@@ -14,4 +14,4 @@
   opacity: 0;
   transition: visibility 0s linear 0.4s, overflow 0s linear 0.4s,
     opacity 0.4s linear 0s;
-}
+} */
