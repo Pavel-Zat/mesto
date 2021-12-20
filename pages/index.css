@@ -53,4 +53,10 @@
 @import url(../blocks/popupimg/__container/popupimg__container.css);
 @import url(../blocks/popupimg/__close/popupimg__close.css);
 @import url(../blocks/popupimg/__capture/popupimg__capture.css);
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__submit/form__submit.css);
+@import url(../blocks/form/__set/form__set.css);
+@import url(../blocks/form/__placeholder/form__placeholder.css);
+@import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__field/form__field.css);
 

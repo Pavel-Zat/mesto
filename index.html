@@ -98,10 +98,22 @@
       <div class="popup__container">
         <button class="popup__close"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form name="popup-form" class="popup__content">
-          <input name="name" type="text" class="popup__text popup__text_type_name">
-          <input name="job" type="text" class="popup__text popup__text_type_job">
-          <button type="submit" class="popup__save popup__save_action_add">Сохранить</button>
+        <form name="popup-form" class="form popup__content" novalidate>
+          <fieldset class="form__set">
+            <label class="form__field" for="name">
+              <input name="name" type="text" class="form__input popup__text popup__text_type_name" required minlength="2" maxlength="40">
+              <span class="form__placeholder name-input-placeholder">
+                Имя
+              </span>
+            </label>
+            <label class="form__field" for="job">
+              <input name="job" type="text" class="form__input popup__text popup__text_type_job" required minlength="2" maxlength="200">
+              <span class="form__placeholder job-input-placeholder">
+                О себе
+              </span>
+            </label>
+            <button type="submit" class="form__submit popup__save popup__save_action_add">Сохранить</button>
+          </fieldset>
         </form>
       </div>
     </div>
