@@ -90,7 +90,7 @@
     </main>
 
     <footer class="footer section page__footer">
-      <p class="footer__copyright">&copy; 2021 Mesto Russia </p>
+      <p class="footer__copyright">&copy; 2021 Pavel Zatulyviter </p>
     </footer>
 
 
@@ -114,11 +114,14 @@
       <div class="popupadd__container">
         <button class="popup__close popupadd__close"></button>
         <h2 class="popupadd__title">Новое место</h2>
-        <form name="popupadd-form" class="popupadd__content">
-          <input placeholder="Название" name="place" type="text" class="popupadd__text popupadd__text_type_place">
-          <input placeholder="Ссылка на картинку" name="link" type="text"
-            class="popupadd__text popupadd__text_type_link">
-          <button type="submit" class="popupadd__save popupadd__save_action_add">Создать</button>
+        <form name="popupadd-form" class="form popupadd__content" novalidate>
+          <input name="place" id="place" type="text" class="form__input popupadd__text popupadd__text_type_place" required
+            minlength="2" maxlength="30" placeholder="Название" autocomplete="off">
+          <span id="place-error" class="form__error"></span>
+          <input name="link" id="link" type="url" class="form__input popupadd__text popupadd__text_type_link" required
+            placeholder="Ссылка на картинку" autocomplete="off">
+          <span id="link-error" class="form__error"></span>
+          <button type="submit" class="form__submit popupadd__save popupadd__save_action_add">Создать</button>
         </form>
       </div>
     </div>
