@@ -1,14 +1,14 @@
 
 
 
-const showError = (form, input, errorMessage, errorClass, inputErrorClass) => {
+const showInputError = (form, input, errorMessage, errorClass, inputErrorClass) => {
     const errorElement = form.querySelector(`#${input.id}-error`);
     errorElement.textContent = errorMessage;
     errorElement.classList.add(errorClass);
     input.classList.add(inputErrorClass);
 }
 
-const hideError = (form, input, errorClass, inputErrorClass) => {
+const hideInputError = (form, input, errorClass, inputErrorClass) => {
     const errorElement = form.querySelector(`#${input.id}-error`);
     errorElement.textContent = '';
     errorElement.classList.remove(errorClass);
@@ -30,21 +30,21 @@ const toggleButtonError = (inputs, button, inactiveButtonClass) => {
     }
 }
 
-const checkIfInputValid = (form, input, { inputErrorClass, errorClass }) => {
+const checkInputValidity = (form, input, { inputErrorClass, errorClass }) => {
     if (!input.validity.valid) {
-        showError(form, input, input.validationMessage, errorClass, inputErrorClass);
+        showInputError(form, input, input.validationMessage, errorClass, inputErrorClass);
     } else {
-        hideError(form, input, errorClass, inputErrorClass);
+        hideInputError(form, input, errorClass, inputErrorClass);
     }
 }
 
 const setInputListeners = (form, { inputSelector, submitButtonSelector, inactiveButtonClass, ...rest }) => {
-    const inputs = form.querySelectorAll(inputSelector);
+    const inputs = Array.from(form.querySelectorAll(inputSelector));
     const submitButton = form.querySelector(submitButtonSelector);
 
     inputs.forEach((input) => {
         input.addEventListener('input', () => {
-            checkIfInputValid(form, input, rest);
+            checkInputValidity(form, input, rest);
             toggleButtonError(inputs, submitButton,inactiveButtonClass);
         });
     });
