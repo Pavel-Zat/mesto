@@ -59,4 +59,6 @@
 @import url(../blocks/form/__placeholder/form__placeholder.css);
 @import url(../blocks/form/__input/form__input.css);
 @import url(../blocks/form/__field/form__field.css);
-
+@import url(../blocks/form/__input/_type_error/form__input_type_error.css);
+@import url(../blocks/form/__error/form__error.css);
+@import url(../blocks/form/__submit/_disabled/form__submit_disabled.css);
