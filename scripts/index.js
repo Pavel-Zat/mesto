@@ -29,15 +29,44 @@ const popupImgCloseButtonElement = popupImgElement.querySelector('.popupimg__clo
 const popupImgOpenButtonElement = document.querySelector('.elements__item');
 const popupImgText = document.querySelector('.popupimg__capture');
 
+const submitButton = document.querySelector('.form__submit');
+
 
 
 //функции открытия и закрытия popup
-const openPopup = function (el) {
-  el.classList.add('popup_is-opened');
+function openPopup(popup) {
+  popup.classList.add('popup_is-opened');
+  //setPopupEventListener (popup);
 }
 
-const closePopup = function (el) {
-  el.classList.remove('popup_is-opened')
+function closePopup(popup) {
+  popup.classList.remove('popup_is-opened')
+}
+
+function closePopupByClickOnOverlay(event) {
+  //console.log(event.target, event.currentTarget)
+  //const popups = Array.from(document.querySelectorAll('.popup'));
+  popups = event.target;
+  if (event.target !== event.currentTarget) {
+   return
+   //closePopup(popups);
+  }
+  closePopup(popups);
+}
+
+function closePopupByEscape(event) {
+  const esc = 'Escape';
+  if (event.key === esc) {
+    //return
+    //const openPopup = document.querySelector(.'popup_is-opend');
+    closePopup();
+  }
+  //closePopup();
+}
+
+function setPopupEventListener (popup) {
+  popup.addEventListener('click', closePopupByClickOnOverlay);
+  popup.addEventListener('keydown', closePopupByEscape);
 }
 
 function formSubmitHandler(evt) {
@@ -127,7 +156,7 @@ popupAddOpenButtonElement.addEventListener('click', () => {
   inputName.value = '';
   inputLink.value = '';
   openPopup(popupAddElement);
-  });
+});
 popupAddCloseButtonElement.addEventListener('click', () => {
   closePopup(popupAddElement);
 });

@@ -16,17 +16,18 @@ const hideInputError = (form, input, errorClass, inputErrorClass) => {
 }
 
 const hasInvalidInput = (inputs) => {
-    return Array.from(inputs).some((el) => !el.validity.valid);
+    return Array.from(inputs).some((element) => !element.validity.valid);
 }
 
-const toggleButtonError = (inputs, button, inactiveButtonClass) => {
-    console.log(hasInvalidInput(inputs))
+const toggleButtonState = (inputs, button, inactiveButtonClass) => {
+    //console.log(hasInvalidInput(inputs));
+    
     if (hasInvalidInput(inputs)) {
         button.classList.add(inactiveButtonClass);
-        button.disabled = true;
+        //button.disabled = true;
     } else {
         button.classList.remove(inactiveButtonClass);
-        button.disabled = false;
+        //button.disabled = false;
     }
 }
 
@@ -41,11 +42,12 @@ const checkInputValidity = (form, input, { inputErrorClass, errorClass }) => {
 const setInputListeners = (form, { inputSelector, submitButtonSelector, inactiveButtonClass, ...rest }) => {
     const inputs = Array.from(form.querySelectorAll(inputSelector));
     const submitButton = form.querySelector(submitButtonSelector);
+    toggleButtonState(inputs, submitButton, inactiveButtonClass);
 
     inputs.forEach((input) => {
         input.addEventListener('input', () => {
             checkInputValidity(form, input, rest);
-            toggleButtonError(inputs, submitButton,inactiveButtonClass);
+            toggleButtonState(inputs, submitButton, inactiveButtonClass);
         });
     });
 }
