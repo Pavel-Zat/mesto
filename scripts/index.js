@@ -36,7 +36,7 @@ const submitButton = document.querySelector('.form__submit');
 //функции открытия и закрытия popup
 function openPopup(popup) {
   popup.classList.add('popup_is-opened');
-  setPopupEventListener (popup);
+  setPopupEventListener(popup);
 }
 
 function closePopup(popup) {
@@ -44,25 +44,22 @@ function closePopup(popup) {
   removePopupEventListener(popup);
 }
 
+//функция закрытия popup по клику на оверлей
 function closePopupByClickOnOverlay(event) {
-  //console.log(event.target, event.currentTarget)
-  //const popups = Array.from(document.querySelectorAll('.popup'));
   popups = event.target;
   if (event.target !== event.currentTarget) {
-   return
-   //closePopup(popups);
+    return
   }
   closePopup(popups);
 }
 
+//функция закрытия popup по нажатию на кнопку Esc
 function closePopupByEscape(event) {
   const esc = 'Escape';
   if (event.key === esc) {
-    //return
     const openPopup = document.querySelector('.popup_is-opened');
     closePopup(openPopup);
   }
-  //closePopup();
 }
 
 function setPopupEventListener(popup) {

@@ -5,7 +5,7 @@ Pavel Zatulyviter
 
 'Mesto'
 
-Создание сайта производилась по макету графического редактора Figma (https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1, https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0%3A1) с расширенными возможностями HTML и CSS с применением технологий начального уровня анимаций и трансформаций, организация файлов по БЭМ.
+Создание сайта производилась по макету графического редактора Figma (https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1, https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0%3A1, https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0%3A1) с расширенными возможностями HTML и CSS с применением технологий начального уровня анимаций и трансформаций, организация файлов по БЭМ.
 
 При построении сеток сайта использовались иструменты Grid Layout и FlexBox.
 
