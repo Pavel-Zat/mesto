@@ -179,8 +179,9 @@ popupCloseButtonElement.addEventListener('click', () => {
 formElement.addEventListener('submit', formSubmitHandler);
 //слушатели событий popupadd
 popupAddOpenButtonElement.addEventListener('click', () => {
-  inputName.value = '';
-  inputLink.value = '';
+  //inputName.value = '';
+  //inputLink.value = '';
+  addFormElement.reset(); //применили метод reset для очистки формы
   openPopup(popupAddElement);
   removeError();
 });
