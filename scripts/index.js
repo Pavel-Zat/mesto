@@ -150,12 +150,28 @@ function renderOpenPopupImg(event) {
 }
 
 
+function removeError() {
+  const removedRedLine = Array.from(document.querySelectorAll('.form__input'));
+  removedRedLine.forEach(redLine => {
+      redLine.classList.remove('form__input_type_error');
+  });
+  const removedErrorText = Array.from(document.querySelectorAll('.form__error'));
+  removedErrorText.forEach(spanText => {
+      spanText.textContent = '';
+  });
+}
+
+
+
 renderNewCards();
+
+
 //слушатели событий popup
 popupOpenButtonElement.addEventListener('click', () => {
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
   openPopup(popupElement);
+  removeError();
 });
 popupCloseButtonElement.addEventListener('click', () => {
   closePopup(popupElement);
@@ -166,7 +182,7 @@ popupAddOpenButtonElement.addEventListener('click', () => {
   inputName.value = '';
   inputLink.value = '';
   openPopup(popupAddElement);
-  
+  removeError();
 });
 popupAddCloseButtonElement.addEventListener('click', () => {
   closePopup(popupAddElement);
