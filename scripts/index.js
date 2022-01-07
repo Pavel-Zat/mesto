@@ -46,7 +46,7 @@ function closePopup(popup) {
 
 //функция закрытия popup по клику на оверлей
 function closePopupByClickOnOverlay(event) {
-  popups = event.target;
+  const popups = event.target;
   if (event.target !== event.currentTarget) {
     return
   }
@@ -110,10 +110,17 @@ function addNewCard() {
   renderCard(newCard);
 }
 
+function disableSubmit () {
+  const submitButton = popupAddElement.querySelector('.form__submit');
+  submitButton.classList.add('form__submit_disabled');
+  submitButton.setAttribute('disable', '');
+}
+
 function addCards(event) {
   event.preventDefault();
   addNewCard();
   closePopup(popupAddElement);
+  disableSubmit();
 }
 
 function renderCard(element) {
@@ -159,6 +166,7 @@ popupAddOpenButtonElement.addEventListener('click', () => {
   inputName.value = '';
   inputLink.value = '';
   openPopup(popupAddElement);
+  
 });
 popupAddCloseButtonElement.addEventListener('click', () => {
   closePopup(popupAddElement);
