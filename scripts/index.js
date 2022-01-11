@@ -1,3 +1,6 @@
+//import Card from "./Card.js";
+
+
 //переменные для popup
 const popupOpenButtonElement = document.querySelector('.profile__edit-button');
 const popupElement = document.querySelector('.popup');
