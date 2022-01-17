@@ -1,4 +1,5 @@
-//import Card from "./Card.js";
+//import {initialCards} from "./initialСards.js";
+//import Card from "./Card.js"
 
 
 //переменные для popup
@@ -82,36 +83,36 @@ function formSubmitHandler(evt) {
   closePopup(popupElement)
 }
 
-//Функция, которая принимает в качестве аргумента данные карточки...
-function renderNewCard(element) {
-  const cardElement = cardTemplate.content.cloneNode(true); // клонирует template
-  // устанавливаем картинку и название в template...alt не забываем )
-  const cardElementImg = cardElement.querySelector('.elements__item');
-  cardElementImg.src = element.link;
-  cardElement.querySelector('.elements__text').textContent = element.name;
-  cardElementImg.alt = element.name;
-  // 3 обработчика событий - лайк, удаление и открытие большой картинки
-  setCardListeners(cardElement);
-  //возвращаем готовую разметку (вкл. все данные и обработчики)
-  return cardElement
-}
+// //Функция, которая принимает в качестве аргумента данные карточки...
+// function renderNewCard(element) {
+//   const cardElement = cardTemplate.content.cloneNode(true); // клонирует template
+//   // устанавливаем картинку и название в template...alt не забываем )
+//   const cardElementImg = cardElement.querySelector('.elements__item');
+//   cardElementImg.src = element.link;
+//   cardElement.querySelector('.elements__text').textContent = element.name;
+//   cardElementImg.alt = element.name;
+//   // 3 обработчика событий - лайк, удаление и открытие большой картинки
+//   setCardListeners(cardElement);
+//   //возвращаем готовую разметку (вкл. все данные и обработчики)
+//   return cardElement
+// }
 
-function renderNewCards() {
-  initialCards.forEach((element) => {
-    renderCard(element);
-  });
-}
+// function renderNewCards() {
+//   initialCards.forEach((element) => {
+//     renderCard(element);
+//   });
+// }
 
 //Функция приинимает данные карточки и ссылку на контейнер, куда положить руз-т
 //внутри себя создает разметку карточки, исп-уя ф-ию выше. и кладет в разметку
 
-function addNewCard() {
-  const newCard = {
-    name: inputName.value,
-    link: inputLink.value,
-  }
-  renderCard(newCard);
-}
+// function addNewCard() {
+//   const newCard = {
+//     name: inputName.value,
+//     link: inputLink.value,
+//   }
+//   renderCard(newCard);
+// }
 
 function disableSubmit () {
   const submitButton = popupAddElement.querySelector('.form__submit');
@@ -126,10 +127,10 @@ function addCards(event) {
   disableSubmit();
 }
 
-function renderCard(element) {
-  const cardNewElement = renderNewCard(element);
-  cardsElements.prepend(cardNewElement);
-}
+// function renderCard(element) {
+//   const cardNewElement = renderNewCard(element);
+//   cardsElements.prepend(cardNewElement);
+// }
 
 function setCardListeners(element) {
   element.querySelector('.elements__heart').addEventListener('click', switchLike);
@@ -166,7 +167,7 @@ function removeError() {
 
 
 
-renderNewCards();
+//renderNewCards();
 
 
 //слушатели событий popup
@@ -196,4 +197,7 @@ addFormElement.addEventListener('submit', addCards);
 popupImgCloseButtonElement.addEventListener('click', () => {
   closePopup(popupImgElement);
 });
+
+import {initialCards} from "./initialСards.js";
+import Card from "./Card.js"
 
