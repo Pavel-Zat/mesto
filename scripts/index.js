@@ -198,6 +198,6 @@ popupImgCloseButtonElement.addEventListener('click', () => {
   closePopup(popupImgElement);
 });
 
-import {initialCards} from "./initialСards.js";
-import Card from "./Card.js"
+import { initialCards } from "./initialСards.js";
+import { Card } from "./Card.js"
 
