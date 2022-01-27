@@ -43,14 +43,11 @@ export default class Card {
       this._element
           .querySelector('.elements__item')
           .addEventListener('click', this._renderOpenPopupImg);
-  }
-  _switchLike = (evt) => {
+    }
+    _switchLike = (evt) => {
       evt.target.classList.toggle('elements__heart_is-black');
-  }
-  _deleteCard = () => {
+    }
+    _deleteCard = () => {
       this._element.remove();
-      this._element = null;
-  }
-  
-
+    }
 }
