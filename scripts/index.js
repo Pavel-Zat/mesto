@@ -1,5 +1,7 @@
-//import {initialCards} from "./initialСards.js";
-//import Card from "./Card.js"
+//import FormValidation from "./FormValidation.js";
+//import { validationObj } from "./validate.js";
+import Card from "./Card.js";
+import { initialCards } from "./initialСards.js";
 
 
 //переменные для popup
@@ -97,28 +99,30 @@ function formSubmitHandler(evt) {
 //   return cardElement
 // }
 
-// function renderNewCards() {
-//   initialCards.forEach((element) => {
-//     renderCard(element);
-//   });
-// }
+function renderCard(element) {
+  const card = new Card(element, '.cards_template', renderOpenPopupImg);
+    const cardNewElement = card.generateCard();
+    return cardNewElement;
+}
+
+function renderNewCards() {
+  initialCards.forEach((element) => {
+    const cardNewElement = renderCard(element);
+    cardsElements.append(cardNewElement);
+  });
+}
 
 //Функция приинимает данные карточки и ссылку на контейнер, куда положить руз-т
 //внутри себя создает разметку карточки, исп-уя ф-ию выше. и кладет в разметку
 
-// function addNewCard() {
-//   const newCard = {
-//     name: inputName.value,
-//     link: inputLink.value,
-//   }
-//   renderCard(newCard);
-// }
-
-function disableSubmit () {
-  const submitButton = popupAddElement.querySelector('.form__submit');
-  submitButton.classList.add('form__submit_disabled');
-  submitButton.setAttribute('disable', '');
-}
+function addNewCard() {
+   const newCard = {
+    name: inputName.value,
+    link: inputLink.value,
+   }
+   const cardNewElement = renderCard(newCard);
+   cardsElements.prepend(cardNewElement);
+ }
 
 function addCards(event) {
   event.preventDefault();
@@ -127,24 +131,19 @@ function addCards(event) {
   disableSubmit();
 }
 
-// function renderCard(element) {
-//   const cardNewElement = renderNewCard(element);
-//   cardsElements.prepend(cardNewElement);
+// function setCardListeners(element) {
+//   element.querySelector('.elements__heart').addEventListener('click', switchLike);
+//   element.querySelector('.elements__trash').addEventListener('click', deleteCard);
+//   element.querySelector('.elements__item').addEventListener('click', renderOpenPopupImg);
 // }
 
-function setCardListeners(element) {
-  element.querySelector('.elements__heart').addEventListener('click', switchLike);
-  element.querySelector('.elements__trash').addEventListener('click', deleteCard);
-  element.querySelector('.elements__item').addEventListener('click', renderOpenPopupImg);
-}
+// function switchLike(event) {
+//   event.target.classList.toggle('elements__heart_is-black');
+// }
 
-function switchLike(event) {
-  event.target.classList.toggle('elements__heart_is-black');
-}
-
-function deleteCard(event) {
-  event.target.closest('.elements__list-item').remove();
-}
+// function deleteCard(event) {
+//   event.target.closest('.elements__list-item').remove();
+// }
 
 function renderOpenPopupImg(event) {
   popupImage.src = event.target.src;
@@ -165,10 +164,11 @@ function removeError() {
   });
 }
 
-
-
-//renderNewCards();
-
+function disableSubmit () {
+  const submitButton = popupAddElement.querySelector('.form__submit');
+  submitButton.classList.add('form__submit_disabled');
+  submitButton.setAttribute('disable', '');
+}
 
 //слушатели событий popup
 popupOpenButtonElement.addEventListener('click', () => {
@@ -198,6 +198,4 @@ popupImgCloseButtonElement.addEventListener('click', () => {
   closePopup(popupImgElement);
 });
 
-import { initialCards } from "./initialСards.js";
-import { Card } from "./Card.js"
-
+renderNewCards();
