@@ -1,5 +1,5 @@
-//import FormValidation from "./FormValidation.js";
-//import { validationObj } from "./validate.js";
+import FormValidator from "./FormValidator.js";
+import { validationObj } from "./validate.js";
 import Card from "./Card.js";
 import { initialCards } from "./initialСards.js";
 
