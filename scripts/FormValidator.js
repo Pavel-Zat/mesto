@@ -6,8 +6,9 @@ export default class FormValidator {
         this._inactiveButtonClass = data.inactiveButtonClass;
         this._inputErrorClass = data.inputErrorClass;
         this._errorClass = data.errorClass;
+        
         // ***
-        this._inputs = Array.from(this._form.querySelectorAll(this._inputSelector));
+        this._inputs = Array.from(this._form.querySelectorAll('.form__input'));
     }
 
     _showInputError(input) {
@@ -25,7 +26,7 @@ export default class FormValidator {
     }
 
     _hasInvalidInput(inputs) {
-        return Array.from(inputs).some((element) => !element.validity.valid);
+        return Array.from(inputs).some((element) => !element.validity.valid); //??
     }
     
     _toggleButtonState() {
@@ -41,25 +42,27 @@ export default class FormValidator {
         }
     }
     
-    _checkInputValidity(input) {
-        if (!input.validity.valid) {
-            showInputError(this._form, input, input.validationMessage, this._errorClass, this._inputErrorClass);
-        } else {
-            hideInputError(this._form, input, this._errorClass, this._inputErrorClass);
-        }
-
-    }
-
     _setInputListeners() {
         this._submitButton = this._form.querySelector(this._submitButtonSelector);
         this._toggleButtonState(this._inputs, this._submitButton, this._inactiveButtonClass);
-
-        this._inputs.forEach((input) => {
+                this._inputs.forEach((input) => {
             input.addEventListener('input', () => {
-                this._checkInputValidity(this._form, input); //аргументы правильно?
+                this._checkInputValidity(input); //аргументы правильно?
                 this._toggleButtonState(this._inputs, this._submitButton, this._inactiveButtonClass);
             })
         })
+
+    }
+
+    _checkInputValidity(input) {
+        input.classList.toggle(this._inputErrorClass, this._errorClass, !input.validity.valid);
+        const errorContainer = this._form.querySelector(`#${input.id}-error`);
+        errorContainer.textContent = input.validationMessage;
+        // if (!input.validity.valid) {
+        //     this._showInputError(input, input.validationMessage);
+        // } else {
+        //     this._hideInputError(input);
+        // }
 
     }
 

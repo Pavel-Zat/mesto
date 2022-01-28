@@ -1,4 +1,4 @@
-export const validationObj = {
+export const configValidation = {
     formSelector: '.form',
     inputSelector: '.form__input',
     submitButtonSelector: '.form__submit',

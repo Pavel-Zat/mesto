@@ -1,5 +1,5 @@
 import FormValidator from "./FormValidator.js";
-import { validationObj } from "./validate.js";
+import { configValidation } from "./validate.js";
 import Card from "./Card.js";
 import { initialCards } from "./initialСards.js";
 
@@ -36,6 +36,10 @@ const popupImgOpenButtonElement = document.querySelector('.elements__item');
 const popupImgText = document.querySelector('.popupimg__capture');
 
 const submitButton = document.querySelector('.form__submit');
+
+// переменные для валидации
+
+
 
 
 
@@ -170,6 +174,10 @@ function disableSubmit () {
   submitButton.setAttribute('disable', '');
 }
 
+const editFormValidator = new FormValidator(configValidation, formElement);
+const addFormValidator = new FormValidator(configValidation, addFormElement);
+
+
 //слушатели событий popup
 popupOpenButtonElement.addEventListener('click', () => {
   nameInput.value = nameProfile.textContent;
@@ -198,4 +206,13 @@ popupImgCloseButtonElement.addEventListener('click', () => {
   closePopup(popupImgElement);
 });
 
+function enableValidation() {
+  //const editFormValidator = new FormValidator(formElement, configValidation);
+  //const addFormValidator = new FormValidator(addFormElement, configValidation);
+  editFormValidator.enableValidation();
+  addFormValidator.enableValidation();
+
+}
+
 renderNewCards();
+enableValidation();
