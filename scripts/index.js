@@ -89,17 +89,10 @@ function renderCard(element) {
   const cardNewElement = card.generateCard();
 
   cardsElements.append(cardNewElement);
-    
-    return cardNewElement;
-
-    
 }
 
 function renderNewCards() {
-  initialCards.forEach((element) => {
-    const cardNewElement = renderCard(element);
-    //cardsElements.append(cardNewElement);
-  });
+  initialCards.forEach(renderCard);
 }
 
 //Функция приинимает данные карточки и ссылку на контейнер, куда положить руз-т
@@ -111,16 +104,14 @@ function addNewCard() {
     link: inputLink.value,
    }
    const cardNewElement = renderCard(newCard);
-   cardsElements.prepend(cardNewElement);
- }
+  }
 
 function addCards(event) {
   event.preventDefault();
   addNewCard();
   closePopup(popupAddElement);
-  editFormValidator.disableSubmit();
-  addFormValidator.disableSubmit();
-  //disableSubmit();
+  //editFormValidator.disableSubmit();
+  //addFormValidator.disableSubmit();
 }
 
 function renderOpenPopupImg(event) {
@@ -159,6 +150,7 @@ popupOpenButtonElement.addEventListener('click', () => {
   openPopup(popupElement);
   //removeError();
   editFormValidator.removeError();
+  
 });
 popupCloseButtonElement.addEventListener('click', () => {
   closePopup(popupElement);
@@ -172,6 +164,7 @@ popupAddOpenButtonElement.addEventListener('click', () => {
   openPopup(popupAddElement);
   //removeError();
   addFormValidator.removeError();
+  
 });
 popupAddCloseButtonElement.addEventListener('click', () => {
   closePopup(popupAddElement);
