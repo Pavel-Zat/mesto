@@ -9,6 +9,7 @@ export default class FormValidator {
         
         // ***
         this._inputs = Array.from(this._form.querySelectorAll('.form__input'));
+        this._errorText = Array.from(this._form.querySelectorAll('.form__error'));
     }
 
     _showInputError(input, errorMessage) {
@@ -25,20 +26,19 @@ export default class FormValidator {
         input.classList.remove(this._inputErrorClass);
     }
 
-    _hasInvalidInput(inputs) {
-        return Array.from(inputs).some((element) => !element.validity.valid); //??
+    _hasInvalidInput() {
+        return this._inputs.some((element) => !element.validity.valid);
     }
     
     _toggleButtonState() {
-        const button = this._form.querySelector(this._submitButtonSelector);
         if (this._hasInvalidInput(this._inputs)) {
-            button.classList.add(this._inactiveButtonClass);
-            button.setAttribute('disabled', '')
-            //button.disabled = true;
+            this._submitButton.classList.add(this._inactiveButtonClass);
+            this._submitButton.setAttribute('disabled', '')
+            this._submitButton.disabled = true;
         } else {
-            button.classList.remove(this._inactiveButtonClass);
-            button.removeAttribute('disabled', '')
-            //button.disabled = false;
+            this._submitButton.classList.remove(this._inactiveButtonClass);
+            this._submitButton.removeAttribute('disabled', '')
+            this._submitButton.disabled = false;
         }
     }
     
@@ -47,23 +47,18 @@ export default class FormValidator {
         this._toggleButtonState(this._inputs, this._submitButton, this._inactiveButtonClass);
                 this._inputs.forEach((input) => {
             input.addEventListener('input', () => {
-                this._checkInputValidity(input); //аргументы правильно?
-                this._toggleButtonState(this._inputs, this._submitButton, this._inactiveButtonClass);
+                this._checkInputValidity(input);
+                this._toggleButtonState();
             })
         })
-
     }
 
     _checkInputValidity(input) {
-        // input.classList.toggle(this._inputErrorClass, this._errorClass, !input.validity.valid);
-        // const errorContainer = this._form.querySelector(`#${input.id}-error`);
-        // errorContainer.textContent = input.validationMessage;
         if (!input.validity.valid) {
             this._showInputError(input, input.validationMessage);
         } else {
             this._hideInputError(input);
         }
-
     }
 
     enableValidation() {
@@ -72,5 +67,16 @@ export default class FormValidator {
         });
 
         this._setInputListeners();
+    }
+    removeError() {
+        this._inputs.forEach((input) => {
+            input.classList.remove(this._inputErrorClass);
+        });
+        this._errorText.forEach((input) => {
+            input.textContent = '';
+        })
+    }
+    disableSubmit() {
+        this._toggleButtonState();
     }
 }
