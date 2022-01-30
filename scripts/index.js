@@ -88,7 +88,7 @@ function renderCard(element) {
   const card = new Card(element, '.cards_template', renderOpenPopupImg);
   const cardNewElement = card.generateCard();
 
-  cardsElements.append(cardNewElement);
+  cardsElements.prepend(cardNewElement);
 }
 
 function renderNewCards() {
@@ -103,16 +103,14 @@ function addNewCard() {
     name: inputName.value,
     link: inputLink.value,
    }
-   const cardNewElement = renderCard(newCard);
+   renderCard(newCard);
   }
 
 function addCards(event) {
   event.preventDefault();
   addNewCard();
   closePopup(popupAddElement);
-  //editFormValidator.disableSubmit();
-  //addFormValidator.disableSubmit();
-}
+  }
 
 function renderOpenPopupImg(event) {
   popupImage.src = event.target.src;
@@ -148,7 +146,7 @@ popupOpenButtonElement.addEventListener('click', () => {
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
   openPopup(popupElement);
-  //removeError();
+  editFormValidator.disableSubmit();
   editFormValidator.removeError();
   
 });
@@ -162,7 +160,7 @@ popupAddOpenButtonElement.addEventListener('click', () => {
   //inputLink.value = '';
   addFormElement.reset(); //применили метод reset для очистки формы
   openPopup(popupAddElement);
-  //removeError();
+  addFormValidator.disableSubmit();
   addFormValidator.removeError();
   
 });

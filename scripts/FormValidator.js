@@ -9,7 +9,6 @@ export default class FormValidator {
         
         // ***
         this._inputs = Array.from(this._form.querySelectorAll('.form__input'));
-        //this._errorText = Array.from(this._form.querySelectorAll('.form__error'));
     }
 
     _showInputError(input, errorMessage) {
@@ -32,8 +31,7 @@ export default class FormValidator {
     
     _toggleButtonState() {
         if (this._hasInvalidInput(this._inputs)) {
-            this._submitButton.classList.add(this._inactiveButtonClass);
-            this._submitButton.setAttribute('disabled', '')
+            this.disableSubmit();
             //this._submitButton.disabled = true;
         } else {
             this._submitButton.classList.remove(this._inactiveButtonClass);
@@ -75,7 +73,7 @@ export default class FormValidator {
         });
         
     }
-    
+
     disableSubmit() {
         this._submitButton.classList.add(this._inactiveButtonClass);
         this._submitButton.setAttribute('disabled', '')
