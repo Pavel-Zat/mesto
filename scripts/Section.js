@@ -23,3 +23,23 @@ export default class Section {
   }
   
 }
+
+// function createCard(data) {
+//   //функция создания карточки
+//   const card = new Card(data, '.template', handleCardClick);
+//   return card;
+// };
+
+// const cardList = new Section ({
+//   items: initialCards,
+//   renderer: (data) => {
+//     const ticket = createCard(data);
+//     const cardElement = ticket.getElement();
+//     cardList.addItem(cardElement); 
+//   }
+// },
+// cardContainer
+// );
+
+// подскажи, метод renderItems у  экземпляра класса
+// Section не забыл вызвать? именно он рендерит изначальный массив
