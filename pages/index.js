@@ -73,7 +73,7 @@ const imgOpen = new PopupWithImage('.popupimg');
 //
 
 function renderCard(element) {
-  const card = new Card(element, '.cards_template', function renderOpenPopupImg() {
+  const card = new Card(element, 'cards_template', function renderOpenPopupImg() {
     imgOpen.open(element);
   });
   const cardNewElement = card.generateCard();
