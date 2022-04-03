@@ -1,3 +1,4 @@
+import Section from "./Section.js";
 import FormValidator from "./FormValidator.js";
 import { configValidation } from "./validate.js";
 import Card from "./Card.js";
@@ -37,7 +38,33 @@ const popupImgText = document.querySelector('.popupimg__capture');
 
 const submitButton = document.querySelector('.form__submit');
 
+// l. Делаем класс Section
 
+const cardList = new Section({
+  items: initialCards,
+  renderer: (item) => { 
+    cardList.addItem(renderCard(item))
+  }
+}, cardsElements);
+
+cardList.renderItems();
+
+function renderCard(element) {
+  const card = new Card(element, '.cards', renderOpenPopupImg);
+  const cardNewElement = card.generateCard();
+
+  cardsElements.prepend(cardNewElement);
+  return cardNewElement;
+}
+
+
+
+function renderOpenPopupImg(event) {
+  popupImage.src = event.target.src;
+  popupImage.alt = event.target.alt;
+  popupImgText.textContent = event.target.alt;
+  openPopup(popupImgElement);
+}
 //функции открытия и закрытия popup
 function openPopup(popup) {
   popup.classList.add('popup_is-opened');
@@ -84,58 +111,7 @@ function formSubmitHandler(evt) {
   closePopup(popupElement)
 }
 
-function renderCard(element) {
-  const card = new Card(element, '.cards_template', renderOpenPopupImg);
-  const cardNewElement = card.generateCard();
 
-  cardsElements.prepend(cardNewElement);
-}
-
-function renderNewCards() {
-  initialCards.forEach(renderCard);
-}
-
-//Функция приинимает данные карточки и ссылку на контейнер, куда положить руз-т
-//внутри себя создает разметку карточки, исп-уя ф-ию выше. и кладет в разметку
-
-function addNewCard() {
-   const newCard = {
-    name: inputName.value,
-    link: inputLink.value,
-   }
-   renderCard(newCard);
-  }
-
-function addCards(event) {
-  event.preventDefault();
-  addNewCard();
-  closePopup(popupAddElement);
-  }
-
-function renderOpenPopupImg(event) {
-  popupImage.src = event.target.src;
-  popupImage.alt = event.target.alt;
-  popupImgText.textContent = event.target.alt;
-  openPopup(popupImgElement);
-}
-
-// function removeError() {
-//   const removedRedLine = Array.from(document.querySelectorAll('.form__input'));
-//   removedRedLine.forEach(redLine => {
-//       redLine.classList.remove('form__input_type_error');
-//   });
-//   const removedErrorText = Array.from(document.querySelectorAll('.form__error'));
-//   removedErrorText.forEach(spanText => {
-//       spanText.textContent = '';
-//   });
-// }
-
-// function disableSubmit () {
-//   const submitButton = popupAddElement.querySelector('.form__submit');
-//   submitButton.classList.add('form__submit_disabled');
-//   submitButton.disabled = true;
-//   //submitButton.setAttribute('disable', '');
-// }
 
 const editFormValidator = new FormValidator(configValidation, formElement);
 const addFormValidator = new FormValidator(configValidation, addFormElement);

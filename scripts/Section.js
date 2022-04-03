@@ -1,27 +1,27 @@
 export default class Section {
-  constructor( { items, renderer }, containerSelector) {
-      this._renderedItems = items;
-      this._renderer = renderer; 
-  
-      this._container = document.querySelector(containerSelector); //DOM-элемент, найденный 
+  constructor({ items, renderer }, containerSelector) {
+    this._renderedItems = items;
+    this._renderer = renderer;
+
+    this._container = containerSelector; //DOM-элемент, найденный 
   }
 
   renderItems() { // перебирает массив данных _renderedItems. Вызывает
-  this.clear();
+    this.clear();
 
-  this._renderedItems.forEach(item => {
+    this._renderedItems.forEach((item) => {
       this._renderer(item);
-  })
+    })
   }
 
   clear() { // метод удаляет всё содержимое поля _container
-  this._container.innerHTML = '';
-    }
-
-  setItem(element) { //принимает параметр element и вставляет его
-  this._container.append(element);
+    this._container.innerHTML = '';
   }
-  
+
+  addItem(element) { //принимает параметр element и вставляет его
+    this._container.prepend(element);
+  }
+
 }
 
 // function createCard(data) {
@@ -35,7 +35,7 @@ export default class Section {
 //   renderer: (data) => {
 //     const ticket = createCard(data);
 //     const cardElement = ticket.getElement();
-//     cardList.addItem(cardElement); 
+//     cardList.addItem(cardElement);
 //   }
 // },
 // cardContainer
