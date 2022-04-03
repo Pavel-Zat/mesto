@@ -5,9 +5,12 @@ export default class Card {
       this._name = data.name;
       this._image = data.link;
       this._renderOpenPopupImg = renderOpenPopupImg;
-      this._template = document.querySelector(this._cardSelector).content;
-
-  }
+      this._template = document
+            .querySelector(this._cardSelector)
+            .content
+            .querySelector('.elements__list-item')
+            .cloneNode(true);
+    }
   // содержит приватные методы, которые работают с разметкой, 
   // устанавливают слушателей событий;
 	// содержит приватные методы для каждого обработчика;
@@ -25,7 +28,7 @@ export default class Card {
     generateCard() {
       // Запишем разметку в приватное поле _element. 
       // Так у других элементов появится доступ к ней.
-      this._element = this._template.querySelector('.elements__list-item').cloneNode(true);
+      this._element = this._template;
       // Добавим данные
       this._element.querySelector('.elements__item').alt = this._name;
       this._element.querySelector('.elements__item').src = this._image;
