@@ -5,25 +5,27 @@ export default class Card {
       this._name = data.name;
       this._image = data.link;
       this._renderOpenPopupImg = renderOpenPopupImg;
+      this._template = document.querySelector(this._cardSelector).content;
+
   }
   // содержит приватные методы, которые работают с разметкой, 
   // устанавливают слушателей событий;
 	// содержит приватные методы для каждого обработчика;
 	// содержит один публичный метод, который возвращает полностью работоспособный и наполненный данными элемент карточки.
-    _getTemplate() {
-      const cardElement = document
-        .querySelector(this._cardSelector)
-        .content
-        .querySelector('.elements__list-item')
-        .cloneNode(true);
+    // _getTemplate() {
+    //   const cardElement = document
+    //     .querySelector(this._cardSelector)
+    //     .content
+    //     .querySelector('.elements__list-item')
+    //     .cloneNode(true);
   
-      return cardElement;
-    }
+    //   return cardElement;
+    // }
 
     generateCard() {
       // Запишем разметку в приватное поле _element. 
       // Так у других элементов появится доступ к ней.
-      this._element = this._getTemplate();
+      this._element = this._template.querySelector('.elements__list-item').cloneNode(true);
       // Добавим данные
       this._element.querySelector('.elements__item').alt = this._name;
       this._element.querySelector('.elements__item').src = this._image;

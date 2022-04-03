@@ -50,7 +50,7 @@ const cardList = new Section({
 cardList.renderItems();
 
 function renderCard(element) {
-  const card = new Card(element, '.cards', renderOpenPopupImg);
+  const card = new Card(element, '.cards_template', renderOpenPopupImg);
   const cardNewElement = card.generateCard();
 
   cardsElements.prepend(cardNewElement);
@@ -93,6 +93,8 @@ function closePopupByEscape(event) {
     closePopup(openPopup);
   }
 }
+
+
 
 function setPopupEventListener(popup) {
   popup.addEventListener('click', closePopupByClickOnOverlay);
