@@ -51,7 +51,7 @@ const cardList = new Section({
   renderer: (item) => { 
     cardList.addItem(renderCard(item))
   }
-}, cardsElements);
+}, '.elements__list');
 
 cardList.renderItems();
 

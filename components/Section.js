@@ -7,16 +7,16 @@ export default class Section {
   }
 
   renderItems() { // перебирает массив данных _renderedItems. Вызывает
-    this.clear();
+    //this.clear();
 
     this._renderedItems.forEach((item) => {
       this._renderer(item);
     })
   }
 
-  clear() { // метод удаляет всё содержимое поля _container
-    this._container.innerHTML = '';
-  }
+  // clear() { // метод удаляет всё содержимое поля _container
+  //   this._container.innerHTML = '';
+  // }
 
   addItem(element) { //принимает параметр element и вставляет его
     this._container.prepend(element);
