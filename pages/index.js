@@ -48,10 +48,10 @@ const addFormValidator = new FormValidator(configValidation, addFormElement);
 
 const cardList = new Section({
   items: initialCards,
-  renderer: (item) => { 
+  renderer: (item) => {
     cardList.addItem(renderCard(item))
   }
-}, '.elements__list');
+}, cardsElements);
 
 cardList.renderItems();
 
@@ -73,7 +73,7 @@ const imgOpen = new PopupWithImage('.popupimg');
 //
 
 function renderCard(element) {
-  const card = new Card(element, 'cards_template', function renderOpenPopupImg() {
+  const card = new Card(element, '.cards_template', function renderOpenPopupImg() {
     imgOpen.open(element);
   });
   const cardNewElement = card.generateCard();
@@ -149,7 +149,7 @@ popupOpenButtonElement.addEventListener('click', () => {
   openPopup(popupElement);
   editFormValidator.disableSubmit();
   editFormValidator.removeError();
-  
+
 });
 popupCloseButtonElement.addEventListener('click', () => {
   closePopup(popupElement);
@@ -163,7 +163,7 @@ popupAddOpenButtonElement.addEventListener('click', () => {
   openPopup(popupAddElement);
   addFormValidator.disableSubmit();
   addFormValidator.removeError();
-  
+
 });
 popupAddCloseButtonElement.addEventListener('click', () => {
   closePopup(popupAddElement);
